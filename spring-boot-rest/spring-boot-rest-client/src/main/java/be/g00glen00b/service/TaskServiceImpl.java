@@ -21,6 +21,7 @@ public class TaskServiceImpl {
     private RestTemplate restTemplate;
 
     public List<TaskDTO> findAll() {
+        // nice you do'nt need Cors here
         return Arrays.stream(restTemplate.getForObject(resource, TaskDTO[].class)).collect(Collectors.toList());
     }
 
